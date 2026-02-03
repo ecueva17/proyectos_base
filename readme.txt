@@ -18,3 +18,18 @@ Clave de organizador: 628087
 Saludos
 
 https://teams.microsoft.com/meet/28362099716112?p=0Qm9npOXoh7AbGMLKR
+
+/**********************************************************/
+Buenos días Sres. 
+Se remite link de acceso a la reunión de hoy.
+
+ 
+REUNIÓN DE COORDINACIÓN PADRONES ELECTORALES EAMCP 2026
+Organizado por Sala RENIEC_5
+ 
+https://reniec.webex.com/reniec/j.php?MTID=mfd5a845bdf9d9c7b3bc0d42cdbbbc9a6
+martes, 3 de febrero de 2026 10:00 AM | 1 hora | (UTC-05:00) Bogotá, Lima, Quito, Río Branco
+Número de reunión: 2863 287 1758
+Contraseña: qxD7UrUM9F6
+Clave de organizador: 472499
+
