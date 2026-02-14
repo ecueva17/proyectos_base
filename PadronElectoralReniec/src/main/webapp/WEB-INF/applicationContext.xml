@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- configurando archivo properties <context:property-placeholder location="/jdbc.properties"/>-->
+    
+    <!-- definir datasource -->
+    <bean id="dataSource" class="org.springframework.jndi.JndiObjectFactoryBean">
+        <property name="jndiName" value="jdbc/idulpi"></property>
+        <property name="resourceRef" value="true" />  
+    </bean>
+    
+    <!-- configurando mybatis -->
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+    
+    <!-- Persistencia -->
+    <!--
+    <bean id="archivoGeneradoDao" class="org.mybatis.spring.mapper.MapperFactoryBean">
+        <property name="mapperInterface" value="pe.gob.reniec.padronelectoral.dao.ArchivoGeneradoDao" />
+        <property name="sqlSessionFactory" ref="sqlSessionFactory" />
+    </bean>
+    -->
+    <!-- Persistencia -->
+    <!--
+    <bean id="archGenHistoricoDao" class="org.mybatis.spring.mapper.MapperFactoryBean">
+        <property name="mapperInterface" value="pe.gob.reniec.padronelectoral.dao.ArchGenHistoricoDao" />
+        <property name="sqlSessionFactory" ref="sqlSessionFactory" />
+    </bean>
+    -->
+    <!-- Persistencia -->
+    <!--
+    <bean id="moduloDao" class="org.mybatis.spring.mapper.MapperFactoryBean">
+        <property name="mapperInterface" value="pe.gob.reniec.padronelectoral.dao.ModuloDao" />
+        <property name="sqlSessionFactory" ref="sqlSessionFactory" />
+    </bean>
+    -->
+    <!-- Persistencia -->
+    <!--
+    <bean id="procesoElectoralDao" class="org.mybatis.spring.mapper.MapperFactoryBean">
+        <property name="mapperInterface" value="pe.gob.reniec.padronelectoral.dao.ProcesoElectoralDao" />
+        <property name="sqlSessionFactory" ref="sqlSessionFactory" />
+    </bean>
+    -->
+    <!-- Persistencia -->
+    <!--
+    <bean id="rolDao" class="org.mybatis.spring.mapper.MapperFactoryBean">
+        <property name="mapperInterface" value="pe.gob.reniec.padronelectoral.dao.RolDao" />
+        <property name="sqlSessionFactory" ref="sqlSessionFactory" />
+    </bean>
+    -->
+    <!-- Persistencia -->
+    <!--
+    <bean id="ubigeoPorProcesoDao" class="org.mybatis.spring.mapper.MapperFactoryBean">
+        <property name="mapperInterface" value="pe.gob.reniec.padronelectoral.dao.UbigeoPorProcesoDao" />
+        <property name="sqlSessionFactory" ref="sqlSessionFactory" />
+    </bean>
+    -->
+    <!-- Persistencia -->
+    <bean id="usuarioDao" class="org.mybatis.spring.mapper.MapperFactoryBean">
+        <property name="mapperInterface" value="pe.gob.reniec.padronelectoral.dao.UsuarioDao" />
+        <property name="sqlSessionFactory" ref="sqlSessionFactory" />
+    </bean>
+
+
+    <!-- Persistencia -->
+    <!--
+    <bean id="padronElectoralDao" class="org.mybatis.spring.mapper.MapperFactoryBean">
+        <property name="mapperInterface" value="pe.gob.reniec.padronelectoral.dao.PadronElectoralDao" />
+        <property name="sqlSessionFactory" ref="sqlSessionFactory" />
+    </bean>
+    -->
+    <bean id="usuarioService" class="pe.gob.reniec.padronelectoral.service.UsuarioService">
+        <property name="usuarioDao" ref="usuarioDao" />
+    </bean>
+    <!--
+    <bean id="parametroDetalleDao" class="org.mybatis.spring.mapper.MapperFactoryBean">
+        <property name="mapperInterface" value="pe.gob.reniec.padronelectoral.dao.ParametroDetalleDao" />
+        <property name="sqlSessionFactory" ref="sqlSessionFactory" />
+    </bean>
+    -->
+</beans>

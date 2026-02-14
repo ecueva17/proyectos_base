@@ -1,0 +1,351 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 03/03/2015, 11:54:29 AM
+    Author     : zmontes
+*/
+
+html, body {
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    font-family: "Trebuchet MS","Helvetica","Arial","Verdana","sans-serif";
+}
+
+.paginas {
+    min-width:1010px !important; /* suppose you want minimun width of 1000px */          /* As IE ignores !important it will set width as 1000px; */
+}
+
+.contenedor{
+    background: none repeat scroll 0 0 #FFFFFF;
+    position: relative;
+    padding: 20px 0 0;
+}
+
+.menu, .cuerpo{
+    display: inline;
+}
+
+.sombra {
+    margin: 0 auto;
+    position: relative;
+    min-height: 300px;
+    height: auto;
+    margin: 15px auto;
+}
+
+/********************** LPI **************/
+#panel-busqueda{
+    padding: 1%;
+
+}
+#panel-busqueda .row{
+    margin: 0;
+}
+#panel-busqueda .input-group{
+    width: 100%;
+    padding: 3px;
+}
+.modal-header h4{
+    margin-bottom: 0;
+    margin-top: 0;
+}
+#de_justi{
+    width: 100%;
+}
+/********************** FIN LPI **************/
+
+/********************** AJAX LOAD **************/
+#load-panel {
+    cursor: wait;
+    background:#cccccc;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=75)";
+    display: none;
+    height: 100%;
+    width: 100%;
+    filter: alpha(opacity=75);
+    opacity: 0.75;
+    position: fixed;
+    top: 0;
+    z-index: 10000;
+}
+
+#image-loading {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    margin-left: -27px; /* -1 * image width / 2 */
+    margin-top: -27px;  /* -1 * image height / 2 */
+    display: none;     
+}
+
+#mensaje-loading {
+    position: relative;
+    top: 50%;
+    margin-left: -27px; /* -1 * image width / 2 */
+    margin-top: 15px;  /* -1 * image height / 2 */
+    display: block;     
+    font-weight: bold;
+    text-align: center;
+}
+/********************** FIN AJAX LOAD **************/
+
+/************************ CABECERA *************************/
+
+#main_links {
+    font-weight: normal;
+    text-decoration: none;
+    color: #000000;
+}
+#main_links:hover{
+    color:#EA5932;
+    font-weight: normal;
+}
+
+#cabecera{
+    background-color:#FFFFFF;
+    background-image:url(../images/header.jpg);
+    background-position:left center;
+    background-repeat:no-repeat;
+    height:70px;overflow: hidden;padding:5px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    _border-radius: 4px;
+    border: 1px solid #004370;
+}
+
+#cabecera #loginFoto{
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    _border-radius: 4px;
+    border: 1px solid #004370;
+    padding: 2px;
+    background: #fff;
+
+}
+
+#titulo_interno {
+    color:#004370;
+    font-size:28px;
+    font-weight:normal;
+    line-height:28px;
+    text-align:left;
+    text-decoration:none;
+}
+
+#txt_nav {
+    font-size: 12px;
+    font-weight: normal;
+    color: #333;
+    text-decoration: none;
+    text-align: left;
+    padding: 0px;
+}
+
+.datosCabecera td { padding:4px; }
+
+/************************ FIN CABECERA ***********************/
+
+/************************ MENU (NO SE USA)*************************/
+
+.nav-pills > li > a {
+    border: 1px solid;
+    padding-top: 6px;
+    padding-bottom: 6px;
+}
+
+/*********************** FIN MENU **************************/
+
+
+/********************** CONTENIDO **************/
+
+#contenido {
+    min-height: 250px;
+    height: auto;
+}
+
+#mensaje, #mensaje1 {
+    font-size: 13px;
+    margin: 5px 0;
+    padding: 5px 15px;
+}
+
+
+
+/*********************** FIN CONTENIDO **********************/
+
+/********************** FOOTER **************/
+
+.pie {
+    background: none repeat scroll 0 0 #666666;
+    margin-bottom: 10px;
+    margin-right: 0px;
+    color: #ffffff;
+    float: none;
+    font-weight: bold;
+    padding: 2px;
+    text-align: center;
+    font-size: 11px;
+}
+
+.pie p {
+    margin: 0;
+}
+/********************** FIN FOOTER ********************/
+
+/********************** BOOTSTRAP **************/
+.multiselect {
+    text-align: left;
+}
+
+.multiselect-container {
+    font-size: 12px;
+}
+
+.btn-group-vertical {
+    width: 100%;
+}
+
+.row{
+    margin-bottom: 5px;
+}
+/********************** FIN BOOTSTRAP **************/
+
+/*************************  LOGIN   *******************************/
+
+.sombraLogin {
+    margin: 0 auto;
+    position: relative;
+    width: 350px;
+    height: auto;
+    margin: 15px auto;
+    padding: 0;
+}
+
+.tituloLogin{
+    font-size: 20px;
+}
+
+.sombraLogin .panel {
+    margin-bottom: 0;
+}
+
+#frmLogin input[type=text] , #frmLogin input[type=password]  {
+    width: 100%;
+}
+
+#frmCambiarClave input[type=text] , #frmCambiarClave input[type=password]  {
+    width: 100%;
+}
+
+/************************** FIN LOGIN **************************************/
+
+.clear{
+    background: none repeat scroll 0 0 transparent;
+    border: 0 none;
+    clear: both;
+    display: block;
+    float: none;
+    font-size: 0;
+    height: 0;
+    list-style: none outside none;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    visibility: hidden;
+    width: 0;
+}
+
+.linea {
+    border-bottom: 1px solid #CCCCCC;
+    font-weight: normal;
+    margin: 0 0 10px;
+    padding: 0.3em;
+}
+
+/************************** PARA TABLA DE RESULTADOS **************************************/
+.itemlista{
+    border-bottom: 1px solid #CCCCCC; 
+    padding: 5px;
+}
+.itemlistamenu:nth-of-type(odd){
+    background-color: #ffffff;
+    border-bottom: 1px solid #CCCCCC;
+    padding: 5px;
+    /*color: #3776AB;*/
+    color: #888888;
+    cursor: pointer;
+}
+.itemlistamenu:nth-of-type(even){
+    background-color: #fafafa;
+    border-bottom: 1px solid #CCCCCC;
+    padding: 5px;
+    /*color: #3776AB;*/
+    color: #888888;
+    cursor: pointer;
+}
+.itemlistasin:nth-of-type(odd){
+    background-color: #ffffff;
+    border-bottom: 1px solid #CCCCCC;
+    padding: 5px;
+    color: #888888;
+}
+.itemlistasin:nth-of-type(even){
+    background-color: #fafafa;
+    border-bottom: 1px solid #CCCCCC;
+    padding: 5px;
+    color: #888888;
+}
+.itemlistamenu:hover{
+    padding: 5px;
+    /*background-color: #D2ECF7;*/
+    background-color: #EEEEEE;
+    /*color: #3776AB;*/
+    color: #888888;
+    border-bottom: 1px solid #CCCCCC;
+    cursor: pointer;
+}
+.itemlistamenu_active{
+    border-bottom: 1px solid #D2ECF7;
+    padding: 5px;
+    cursor: pointer;
+    color: #FFFFFF;
+    background-color: #3776AB;
+}
+.cajascroll{
+    margin: 5px;
+    padding: 5px;
+    /*width: 95%;*/
+    overflow: auto;
+    border: 1px solid #ddd; 
+    border-radius: 3px;
+    max-height: 300px;
+}
+.cajatexto{
+    margin: 15px 5px 5px 5px;
+    color: #555555;
+}
+.progress {
+    width:99%; 
+    border: 1px solid #ddd; 
+    padding: 1px; 
+    border-radius: 3px; 
+}
+.bar { 
+    background-color: #B4F5B4; 
+    width:0%; height:2px; 
+    border-radius: 3px; 
+}
+#tablaResultadoUbigeos, #tablaResultadoGeneracion{
+    margin: 0 20px;
+}
+#btnDescargaDisabled{
+    color: gainsboro;
+    pointer-events: none;
+    cursor: default;
+}
