@@ -50,7 +50,7 @@ ORDER BY t.ap_primer, t.ap_segundo, t.prenom_inscrito ASC]]>
 				<textElement textAlignment="Center">
 					<font fontName="Arial" size="16"/>
 				</textElement>
-				<text><![CDATA[REGISTRO NACIONAL DE IDENTIFICACION Y ESTADO CIVIL - RENIEC]]></text>
+				<text><![CDATA[REGISTRO NACIONAL DE IDENTIFICACION Y ESTADO CIVIL-RENIEC]]></text>
 			</staticText>
 			<textField>
 				<reportElement x="-20" y="202" width="595" height="60" uuid="4c9061b8-612f-47ca-8969-d4b181296580">
