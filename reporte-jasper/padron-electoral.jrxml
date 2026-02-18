@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.21.2.final using JasperReports Library version 6.21.2-8434a0bd7c3bbc37cbf916f2968d35e4b165821a  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="padron-electoral" columnCount="3" pageWidth="595" pageHeight="842" columnWidth="185" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="64ba6550-70be-4fb7-8841-890171eb66bb">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<parameter name="DE_PROCESO" class="java.lang.String"/>
+	<parameter name="CO_DEPARTAMENTO" class="java.lang.String"/>
+	<parameter name="CO_PROVINCIA" class="java.lang.String"/>
+	<parameter name="CO_DISTRITO" class="java.lang.String"/>
+	<parameter name="CO_PROCESO" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT t.nu_dni, t.gp_votacion, t.de_direccion,
+replace(t.ap_primer,' ','_') ||'_'|| replace(t.ap_segundo,' ','_') ||'_'|| replace(t.prenom_inscrito,' ','_') ap_am_nom,
+t.in_caducidad,
+  RTRIM(
+    CASE WHEN t.IN_FALLECIDO_SIN_ACTA_DEF = '1' THEN 'A, ' ELSE '' END ||
+    CASE WHEN t.IN_DOMICILIO_NO_ACTUAL = '1' THEN 'B, ' ELSE '' END ||
+    CASE WHEN t.IN_MAYOR_CON_FOTO_MENOR = '1' THEN 'C, ' ELSE '' END ||
+    CASE WHEN t.IN_MAYOR_CIEN_ANIO = '1' THEN 'D, ' ELSE '' END ||
+    CASE WHEN t.IN_CUMPLE_MAYOR_EDAD = '1' THEN 'E, ' ELSE '' END
+  , ', ') AS de_anotacion,
+t.IN_CUMPLE_MAYOR_EDAD AS in_mayor_edad
+FROM IDOLPI.CGTM_ANI_LPI_G t
+where t.co_departamento_domicilio =$P{CO_DEPARTAMENTO}
+and t.co_provincia_domicilio=$P{CO_PROVINCIA}
+and t.co_distrito_domicilio=$P{CO_DISTRITO}
+and t.co_proceso_electoral=$P{CO_PROCESO}
+and  t.co_restri = ' '
+ORDER BY t.ap_primer, t.ap_segundo, t.prenom_inscrito ASC]]>
+	</queryString>
+	<field name="nu_dni" class="java.lang.String"/>
+	<field name="gp_votacion" class="java.lang.String"/>
+	<field name="de_direccion" class="java.lang.String"/>
+	<field name="ap_am_nom" class="java.lang.String"/>
+	<field name="in_caducidad" class="java.lang.String"/>
+	<background>
+		<band height="565" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+		</band>
+	</background>
+	<title>
+		<band height="565" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<staticText>
+				<reportElement x="-30" y="12" width="605" height="20" uuid="35ed7b5e-e585-40ea-8ab3-c6d851d12bb4">
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="16"/>
+				</textElement>
+				<text><![CDATA[REGISTRO NACIONAL DE IDENTIFICACION Y ESTADO CIVIL - RENIEC]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="-20" y="202" width="595" height="60" uuid="4c9061b8-612f-47ca-8969-d4b181296580">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{DE_PROCESO}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="67" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="10" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="47" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<textField>
+				<reportElement x="3" y="1" width="177" height="18" uuid="13b6401c-3162-45cc-98f4-f8c1fbb4621a">
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{ap_am_nom}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="10" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+		</band>
+	</summary>
+</jasperReport>
