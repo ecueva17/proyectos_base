@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.21.3.final using JasperReports Library version 6.21.3-4a3078d20785ebe464f18037d738d12fc98c13cf  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="reportPadronElectoral1" columnCount="3" pageWidth="842" pageHeight="595" orientation="Landscape" whenNoDataType="AllSectionsNoDetail" columnWidth="274" leftMargin="10" rightMargin="10" topMargin="10" bottomMargin="10" isTitleNewPage="true" uuid="4270c3db-20d1-466e-832a-b3f3adb462e5">
+	<property name="ireport.zoom" value="3.8974342000000037"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="2129"/>
+	<parameter name="CO_DEPARTAMENTO" class="java.lang.String"/>
+	<parameter name="CO_PROVINCIA" class="java.lang.String"/>
+	<parameter name="CO_DISTRITO" class="java.lang.String"/>
+	<parameter name="LOGO_RENIEC" class="java.lang.String"/>
+	<parameter name="FE_REALIZACION" class="java.lang.String"/>
+	<parameter name="DE_PROCESO" class="java.lang.String"/>
+	<parameter name="DE_DEPARTAMENTO" class="java.lang.String"/>
+	<parameter name="DE_PROVINCIA" class="java.lang.String"/>
+	<parameter name="DE_DISTRITO" class="java.lang.String"/>
+	<parameter name="FONDO_RENIEC" class="java.lang.String"/>
+	<parameter name="foto_ancho" class="java.lang.Integer"/>
+	<parameter name="foto_alto" class="java.lang.Integer"/>
+	<parameter name="CO_PROCESO" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT t.nu_dni, t.gp_votacion, t.de_direccion,
+replace(t.ap_primer,' ','_') ||'_'|| replace(t.ap_segundo,' ','_') ||'_'|| replace(t.prenom_inscrito,' ','_') ap_am_nom,
+t.in_caducidad,
+  RTRIM(
+    CASE WHEN t.IN_FALLECIDO_SIN_ACTA_DEF = '1' THEN 'A, ' ELSE '' END ||
+    CASE WHEN t.IN_DOMICILIO_NO_ACTUAL = '1' THEN 'B, ' ELSE '' END ||
+    CASE WHEN t.IN_MAYOR_CON_FOTO_MENOR = '1' THEN 'C, ' ELSE '' END ||
+    CASE WHEN t.IN_MAYOR_CIEN_ANIO = '1' THEN 'D, ' ELSE '' END ||
+    CASE WHEN t.IN_CUMPLE_MAYOR_EDAD = '1' THEN 'E, ' ELSE '' END
+  , ', ') AS de_anotacion,
+t.IN_CUMPLE_MAYOR_EDAD AS in_mayor_edad
+FROM IDOLPI.CGTM_ANI_LPI_G t
+where t.co_departamento_domicilio =$P{CO_DEPARTAMENTO}
+and t.co_provincia_domicilio=$P{CO_PROVINCIA}
+and t.co_distrito_domicilio=$P{CO_DISTRITO}
+and t.co_proceso_electoral=$P{CO_PROCESO}
+and  t.co_restri = ' '
+ORDER BY t.ap_primer, t.ap_segundo, t.prenom_inscrito ASC]]>
+	</queryString>
+	<field name="nu_dni" class="java.lang.String"/>
+	<field name="gp_votacion" class="java.lang.String"/>
+	<field name="de_direccion" class="java.lang.String"/>
+	<field name="ap_am_nom" class="java.lang.String"/>
+	<field name="in_caducidad" class="java.lang.String"/>
+	<field name="de_anotacion" class="java.lang.String"/>
+	<field name="in_mayor_edad" class="java.lang.String"/>
+	<background>
+		<band height="565" splitType="Stretch">
+			<image>
+				<reportElement x="1" y="0" width="821" height="565" uuid="27ad48c0-3920-4869-a864-dd713a441729">
+					<printWhenExpression><![CDATA[$P{FONDO_RENIEC}.length()!=0]]></printWhenExpression>
+				</reportElement>
+				<imageExpression><![CDATA[$P{FONDO_RENIEC}]]></imageExpression>
+			</image>
+		</band>
+	</background>
+	<title>
+		<band height="565" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="12" width="822" height="20" uuid="4273fc94-3acd-4cf0-863e-b5669f93f1f3"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="16" isBold="true"/>
+				</textElement>
+				<text><![CDATA[REGISTRO NACIONAL DE IDENTIFICACION Y ESTADO CIVIL - RENIEC]]></text>
+			</staticText>
+			<image>
+				<reportElement x="280" y="71" width="275" height="109" uuid="cbad2639-db68-44fd-93f0-c8bc8e2d3100">
+					<printWhenExpression><![CDATA[$P{LOGO_RENIEC}.length()!=0]]></printWhenExpression>
+				</reportElement>
+				<imageExpression><![CDATA[$P{LOGO_RENIEC}]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement x="0" y="202" width="822" height="60" uuid="ae1071f9-46d2-447d-8db2-5c997789f7f9"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{DE_PROCESO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="261" width="822" height="20" uuid="323032b4-927c-437f-bc2f-7fd7df3489ab"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["A REALIZARSE EL " + $P{FE_REALIZACION}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="286" y="301" width="131" height="20" uuid="61724768-2a0f-43d6-a3c3-c80081343f61"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DEPARTAMENTO:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="417" y="301" width="405" height="20" uuid="99fa491d-d9bc-4b5a-97e9-7f20378380f6"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{CO_DEPARTAMENTO} + " - " + $P{DE_DEPARTAMENTO}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="286" y="323" width="131" height="20" uuid="6ece7aae-3778-4e8b-80f5-94a48079fc17"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PROVINCIA:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="417" y="323" width="405" height="20" uuid="fb393e60-05e0-423b-a27c-e1db779f5db8"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{CO_PROVINCIA} + " - " + $P{DE_PROVINCIA}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="285" y="345" width="132" height="20" uuid="3776a7b2-60e0-4bf2-873a-bdf2f5131921"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DISTRITO:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="417" y="345" width="405" height="20" uuid="70fb6696-2eeb-49b3-893f-2bd9b2c23f3f"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{CO_DISTRITO} + " - " + $P{DE_DISTRITO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="407" width="822" height="20" uuid="d9090e4b-e352-45c4-a181-dd5f0f4672f5"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["LISTA DEL PADRON INICIAL - REGISTROS HABILES"]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="67" splitType="Stretch">
+			<image>
+				<reportElement x="6" y="0" width="113" height="44" uuid="835ce6e7-bec6-4eee-876b-808afad12046">
+					<printWhenExpression><![CDATA[$P{LOGO_RENIEC}.length()!=0]]></printWhenExpression>
+				</reportElement>
+				<imageExpression><![CDATA[$P{LOGO_RENIEC}]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="161" y="0" width="477" height="14" uuid="8a9359a2-e0e4-4fe4-99f3-a8ab4db17a4c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[REGISTRO NACIONAL DE IDENTIFICACION Y ESTADO CIVIL - RENIEC]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="161" y="45" width="477" height="10" uuid="0809b12c-ebf8-4850-afa2-29b5f94fec78"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[LEY ORGANICA DE ELECCIONES N° 26859 ART. 198°]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="6" y="54" width="83" height="12" uuid="29d5ab18-a80c-48bf-8833-d56bbe3d2bda"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DEPARTAMENTO:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="287" y="54" width="58" height="12" uuid="c4a7d584-1c2f-4de9-831c-ace9fc2e249b"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[PROVINCIA:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="559" y="54" width="50" height="12" uuid="990fc8d2-a4cc-4898-8a86-9b9e2181a66b"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DISTRITO:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="89" y="54" width="179" height="12" uuid="4857ffc1-6d5f-43c3-bd0a-fe381766e926"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{CO_DEPARTAMENTO} + " - " + $P{DE_DEPARTAMENTO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="345" y="54" width="201" height="12" uuid="7fec1ba9-a7bf-4f4a-b5e4-1963963cc4c1"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{CO_PROVINCIA} + " - " + $P{DE_PROVINCIA}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="609" y="54" width="213" height="12" uuid="d8dabc48-b135-4bfd-9487-04cb166a4f51"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{CO_DISTRITO} + " - " + $P{DE_DISTRITO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="695" y="16" width="80" height="12" uuid="4be70af6-2dcf-4f31-bce9-5ae1f9ec69a2"/>
+				<textElement textAlignment="Right">
+					<font fontName="Arial" size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["PAG:"+String.format("%05d",$V{PAGE_NUMBER} -1 )+" /"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report" pattern="">
+				<reportElement x="775" y="16" width="40" height="12" uuid="5a6ad370-7ef3-41a9-afd1-b2429f23cfc2"/>
+				<textElement>
+					<font fontName="Arial" size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[String.format("%05d",$V{PAGE_NUMBER} - 1)]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="119" y="14" width="561" height="22" uuid="91f4d3c7-999b-4c6b-b256-07d7fab8e762"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["LISTA DEL PADRON INICIAL - " + $P{DE_PROCESO}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="161" y="35" width="477" height="10" uuid="32bb61e0-279f-4e13-90b3-92f82a6a74d5"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="8" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["A REALIZARSE EL " + $P{FE_REALIZACION}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="10" splitType="Stretch">
+			<rectangle>
+				<reportElement x="2" y="0" width="221" height="10" uuid="bbc7d5af-5520-46d7-aa75-f34e2ea6d246"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="2" y="0" width="221" height="10" uuid="a65d0630-662f-4f1b-b2fb-96dadb188bf1"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="8" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DATOS]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="47" splitType="Stretch">
+			<textField>
+				<reportElement x="3" y="1" width="217" height="18" uuid="fe86103a-ce4f-4575-9ade-03833ae83d31"/>
+				<textElement>
+					<font fontName="Arial" size="6"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{ap_am_nom}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="167" y="7" width="53" height="9" uuid="7f8e01fc-ba9f-4c50-84ea-cffc223b196a"/>
+				<textElement textAlignment="Right">
+					<font fontName="Arial" size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nu_dni}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="165" y="7" width="35" height="9" uuid="ed186a03-46f6-402c-bccf-cfdca62f6a1f"/>
+				<textElement>
+					<font fontName="Arial" size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[D.N.I.:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="167" y="14" width="53" height="9" uuid="7885e474-fb9a-434b-bd6d-4377f436adc5"/>
+				<textElement textAlignment="Right">
+					<font fontName="Arial" size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{gp_votacion}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="112" y="14" width="80" height="9" uuid="753be3d1-9da7-464b-af44-c13796f5a83d"/>
+				<textElement textAlignment="Left">
+					<font fontName="Arial" size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[GRUPO DE VOTACIÓN:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="3" y="22" width="217" height="25" uuid="3fde89ae-b846-41a8-b7c6-f3496d1598a4"/>
+				<textElement textAlignment="Right" markup="html">
+					<font fontName="Arial" size="7" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["<B>DIRECCIÓN: </B>" + (($F{de_direccion}!=null) ? $F{de_direccion} : "")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="FixRelativeToBottom" x="39" y="38" width="53" height="9" uuid="47073a5e-759c-4d33-b652-9ea2f182ed40">
+					<printWhenExpression><![CDATA[$F{in_caducidad}.equals("1") || $F{in_caducidad}.equals("2")]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="7"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{in_caducidad}.equals("1")) ? "CADUCO" : "POR CADUCAR"]]></textFieldExpression>
+			</textField>
+			<textField pattern="" isBlankWhenNull="false">
+				<reportElement mode="Transparent" x="149" y="38" width="70" height="9" forecolor="#000000" backcolor="#FFFFFF" uuid="bb188a96-89dc-4083-b877-d7e11504813c">
+					<printWhenExpression><![CDATA[!$F{de_anotacion}.isEmpty()]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Left" verticalAlignment="Top" rotation="None" markup="none">
+					<font fontName="Arial" size="7" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{de_anotacion}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement positionType="FixRelativeToBottom" x="3" y="38" width="36" height="9" uuid="a3b05007-2c54-4a1b-9771-78115b90b548">
+					<printWhenExpression><![CDATA[$F{in_caducidad}.equals("1") || $F{in_caducidad}.equals("2")]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ESTADO:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement positionType="FixRelativeToBottom" x="92" y="38" width="57" height="9" uuid="e8a36a30-e4ee-4a28-a567-edb7a2d076ee">
+					<printWhenExpression><![CDATA[!$F{de_anotacion}.isEmpty()]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="7" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ANOTACIONES:]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement mode="Transparent" x="2" y="0" width="221" height="47" uuid="3741e979-2b35-44a7-9406-0aaf18d4542c"/>
+			</rectangle>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="10" splitType="Stretch">
+			<textField>
+				<reportElement mode="Transparent" x="0" y="0" width="822" height="10" forecolor="#000000" backcolor="#FFFFFF" uuid="5e685248-629e-4b81-926b-2781cde05406"/>
+				<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None" markup="html">
+					<font fontName="Arial" size="6" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" ANOTACIONES:"+ "<B>A) FALLECIDO SIN ACTA DE DEFUNCIÓN; B) DOMICILIO NO ACTUALIZADO; C) MAYOR DE EDAD CON FOTO DE MENOR; D) CIUDADANO(A) MAYOR A 100 AÑOS; E) CIUDADANO(A) CUMPLE 18 HASTA DÍA DE LA ELECCIÓN.</B"]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
