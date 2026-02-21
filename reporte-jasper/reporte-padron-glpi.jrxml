@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Jaspersoft Studio version 6.21.3.final using JasperReports Library version 6.20.6  -->
+<!-- Created with Jaspersoft Studio version 6.21.2.final using JasperReports Library version 6.21.2-8434a0bd7c3bbc37cbf916f2968d35e4b165821a  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="reporte-padron-glpi" language="groovy" columnCount="3" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="267" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isTitleNewPage="true" uuid="8d77ac78-17d0-460a-aa85-57b62bbeca6b">
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
 	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w1" value="275"/>
@@ -65,7 +65,8 @@
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Arial" size="16" isBold="true"/>
 				</textElement>
-				<text><![CDATA[REGISTRO NACIONAL DE IDENTIFICACION Y ESTADO CIVIL - RENIEC]]></text>
+				<text><![CDATA[REGISTRO NACIONAL DE IDENTIFICACION Y ESTADO CIVIL - RENIEC-
+]]></text>
 			</staticText>
 			<image>
 				<reportElement x="280" y="71" width="275" height="109" uuid="8a202e88-840a-449b-a30d-d44027be507c">
