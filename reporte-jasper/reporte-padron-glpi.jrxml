@@ -1,17 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.21.2.final using JasperReports Library version 6.21.2-8434a0bd7c3bbc37cbf916f2968d35e4b165821a  -->
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="reporte-padron-glpi" language="groovy" columnCount="3" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="267" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isTitleNewPage="true" uuid="8d77ac78-17d0-460a-aa85-57b62bbeca6b">
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="reporte-padron-glpi" columnCount="3" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="267" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="9356e29b-d842-463c-bbc8-18a68ed2f9b1">
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
-	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w1" value="275"/>
-	<property name="com.jaspersoft.studio.data.sql.SQLQueryDesigner.sash.w2" value="717"/>
-	<parameter name="FONDO_RENIEC" class="java.lang.String"/>
-	<parameter name="LOGO_RENIEC" class="java.lang.String"/>
+	<parameter name="DE_PROCESO" class="java.lang.String"/>
 	<parameter name="CO_DEPARTAMENTO" class="java.lang.String"/>
 	<parameter name="CO_PROVINCIA" class="java.lang.String"/>
 	<parameter name="CO_DISTRITO" class="java.lang.String"/>
 	<parameter name="CO_PROCESO" class="java.lang.String"/>
-	<parameter name="P_MAX_ROW" class="java.lang.Integer"/>
 	<parameter name="P_MIN_ROW" class="java.lang.Integer"/>
+	<parameter name="P_MAX_ROW" class="java.lang.Integer"/>
 	<queryString>
 		<![CDATA[select * from (
   select a.*, ROWNUM rnum from (
@@ -36,27 +33,19 @@
   ) a where ROWNUM <= $P{P_MAX_ROW}
 ) where rnum > $P{P_MIN_ROW}]]>
 	</queryString>
+	<field name="nu_dni" class="java.lang.String"/>
+	<field name="gp_votacion" class="java.lang.String"/>
+	<field name="de_direccion" class="java.lang.String"/>
 	<field name="ap_am_nom" class="java.lang.String"/>
+	<field name="in_caducidad" class="java.lang.String"/>
 	<background>
-		<band height="550" splitType="Stretch">
-			<property name="com.jaspersoft.studio.unit.height" value="px"/>
-			<image>
-				<reportElement x="1" y="0" width="779" height="520" uuid="e7c94fec-f9b9-4ba2-8b75-32958293defb">
-					<property name="com.jaspersoft.studio.unit.x" value="px"/>
-					<property name="com.jaspersoft.studio.unit.y" value="px"/>
-					<property name="com.jaspersoft.studio.unit.width" value="px"/>
-					<property name="com.jaspersoft.studio.unit.height" value="px"/>
-					<printWhenExpression><![CDATA[$P{FONDO_RENIEC}.length()!=0]]></printWhenExpression>
-				</reportElement>
-				<imageExpression><![CDATA[$P{FONDO_RENIEC}]]></imageExpression>
-			</image>
-		</band>
+		<band splitType="Stretch"/>
 	</background>
 	<title>
-		<band height="555" splitType="Stretch">
+		<band height="360" splitType="Stretch">
 			<property name="com.jaspersoft.studio.unit.height" value="px"/>
 			<staticText>
-				<reportElement x="0" y="12" width="800" height="20" uuid="5265fb53-f61b-4127-bf3a-49b61a0e9f5a">
+				<reportElement x="0" y="12" width="795" height="20" uuid="2c0c0e8f-23f1-49a2-bbf8-9ee6dfa2acbc">
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
@@ -65,128 +54,51 @@
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Arial" size="16" isBold="true"/>
 				</textElement>
-				<text><![CDATA[REGISTRO NACIONAL DE IDENTIFICACION Y ESTADO CIVIL - RENIEC-
-]]></text>
+				<text><![CDATA[REGISTRO NACIONAL DE IDENTIFICACION Y ESTADO CIVIL-RENIEC]]></text>
 			</staticText>
-			<image>
-				<reportElement x="280" y="71" width="275" height="109" uuid="8a202e88-840a-449b-a30d-d44027be507c">
+			<textField>
+				<reportElement x="0" y="202" width="795" height="60" uuid="cadf4dc6-0f4d-4f63-8da7-688c835072fb">
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
-					<property name="com.jaspersoft.studio.unit.width" value="px"/>
-					<property name="com.jaspersoft.studio.unit.height" value="px"/>
-					<printWhenExpression><![CDATA[$P{LOGO_RENIEC}.length()!=0]]></printWhenExpression>
-				</reportElement>
-				<imageExpression><![CDATA[$P{LOGO_RENIEC}]]></imageExpression>
-			</image>
-			<staticText>
-				<reportElement x="0" y="407" width="800" height="20" uuid="1521e1e9-3b50-4dd3-a7f0-fc09f19359ce">
-					<property name="com.jaspersoft.studio.unit.x" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
-					<property name="com.jaspersoft.studio.unit.y" value="px"/>
 				</reportElement>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Arial" size="16" isBold="true"/>
+					<font fontName="Arial" size="14"/>
 				</textElement>
-				<text><![CDATA[LISTA DEL PADRON INICIAL - REGISTROS HABILES]]></text>
-			</staticText>
+				<textFieldExpression><![CDATA[$P{DE_PROCESO}]]></textFieldExpression>
+			</textField>
 		</band>
 	</title>
 	<pageHeader>
-		<band height="67" splitType="Stretch">
-			<property name="com.jaspersoft.studio.unit.height" value="px"/>
-			<staticText>
-				<reportElement x="161" y="0" width="477" height="14" uuid="55fc1e3f-4f66-4cd3-a67e-f07543455fca">
-					<property name="com.jaspersoft.studio.unit.x" value="px"/>
-					<property name="com.jaspersoft.studio.unit.y" value="px"/>
-					<property name="com.jaspersoft.studio.unit.width" value="px"/>
-					<property name="com.jaspersoft.studio.unit.height" value="px"/>
-				</reportElement>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Arial" size="12" isBold="true"/>
-				</textElement>
-				<text><![CDATA[REGISTRO NACIONAL DE IDENTIFICACION Y ESTADO CIVIL - RENIEC]]></text>
-			</staticText>
-			<textField>
-				<reportElement x="680" y="9" width="80" height="12" uuid="dc079c87-2ec2-4f21-abab-ea6751ceb725">
-					<property name="com.jaspersoft.studio.unit.x" value="px"/>
-					<property name="com.jaspersoft.studio.unit.y" value="px"/>
-					<property name="com.jaspersoft.studio.unit.width" value="px"/>
-					<property name="com.jaspersoft.studio.unit.height" value="px"/>
-				</reportElement>
-				<textElement textAlignment="Right">
-					<font fontName="Arial" size="10" isBold="true"/>
-				</textElement>
-				<textFieldExpression><![CDATA["PAG:"+String.format("%05d",$V{PAGE_NUMBER} -1 )+" /"]]></textFieldExpression>
-			</textField>
-			<textField evaluationTime="Report">
-				<reportElement x="760" y="9" width="40" height="12" uuid="43532a53-a7cb-4ba3-af38-44cfce1b600a">
-					<property name="com.jaspersoft.studio.unit.x" value="px"/>
-					<property name="com.jaspersoft.studio.unit.y" value="px"/>
-					<property name="com.jaspersoft.studio.unit.width" value="px"/>
-					<property name="com.jaspersoft.studio.unit.height" value="px"/>
-				</reportElement>
-				<textElement>
-					<font fontName="Arial" isBold="true"/>
-				</textElement>
-				<textFieldExpression><![CDATA[String.format("%05d",$V{PAGE_NUMBER} - 1)]]></textFieldExpression>
-			</textField>
-		</band>
+		<band height="35" splitType="Stretch"/>
 	</pageHeader>
 	<columnHeader>
-		<band height="10" splitType="Stretch">
-			<property name="com.jaspersoft.studio.unit.height" value="px"/>
-			<staticText>
-				<reportElement x="2" y="0" width="221" height="10" uuid="f6423f97-7736-420e-b8ee-af0cadf9fbe1">
-					<property name="com.jaspersoft.studio.unit.x" value="px"/>
-					<property name="com.jaspersoft.studio.unit.y" value="px"/>
-					<property name="com.jaspersoft.studio.unit.width" value="px"/>
-					<property name="com.jaspersoft.studio.unit.height" value="px"/>
-				</reportElement>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Arial" size="8"/>
-				</textElement>
-				<text><![CDATA[Datos]]></text>
-			</staticText>
-		</band>
+		<band height="61" splitType="Stretch"/>
 	</columnHeader>
 	<detail>
-		<band height="47" splitType="Stretch">
-			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+		<band height="125" splitType="Stretch">
 			<textField>
-				<reportElement x="3" y="1" width="217" height="18" uuid="4aafe384-9359-4e53-b399-7dfb87db53ef">
+				<reportElement x="3" y="1" width="260" height="18" uuid="7094a6a4-7e7e-4722-8991-d816b74ab8c4">
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
 					<property name="com.jaspersoft.studio.unit.y" value="px"/>
-					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 				</reportElement>
 				<textElement>
-					<font fontName="Arial" size="6"/>
+					<font fontName="Arial"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{ap_am_nom}]]></textFieldExpression>
 			</textField>
 		</band>
 	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
 	<pageFooter>
-		<band height="10" splitType="Stretch">
-			<property name="com.jaspersoft.studio.unit.height" value="px"/>
-			<textField>
-				<reportElement x="0" y="0" width="800" height="10" uuid="a610c4c2-e890-491c-8a33-fea8b2b51e3a">
-					<property name="com.jaspersoft.studio.unit.x" value="px"/>
-					<property name="com.jaspersoft.studio.unit.y" value="px"/>
-					<property name="com.jaspersoft.studio.unit.height" value="px"/>
-					<property name="com.jaspersoft.studio.unit.width" value="px"/>
-				</reportElement>
-				<textElement verticalAlignment="Middle">
-					<font fontName="Arial" size="6"/>
-				</textElement>
-				<textFieldExpression><![CDATA[" ANOTACIONES:"+ "<B>A) FALLECIDO SIN ACTA DE DEFUNCIÓN; B) DOMICILIO NO ACTUALIZADO; C) MAYOR DE EDAD CON FOTO DE MENOR; D) CIUDADANO(A) MAYOR A 100 AÑOS; E) CIUDADANO(A) CUMPLE 18 HASTA DÍA DE LA ELECCIÓN.</B"]]></textFieldExpression>
-			</textField>
-		</band>
+		<band height="54" splitType="Stretch"/>
 	</pageFooter>
 	<summary>
-		<band splitType="Stretch">
-			<property name="com.jaspersoft.studio.unit.height" value="px"/>
-		</band>
+		<band height="42" splitType="Stretch"/>
 	</summary>
 </jasperReport>
