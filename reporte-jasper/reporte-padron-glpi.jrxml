@@ -56,7 +56,7 @@
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Arial" size="16" isBold="true"/>
 				</textElement>
-				<text><![CDATA[REGISTRO NACIONAL DE IDENTIFICACION Y ESTADO CIVIL-RENIEC]]></text>
+				<text><![CDATA[REGISTRO NACIONAL DE IDENTIFICACION Y ESTADO CIVIL-RENIEC-]]></text>
 			</staticText>
 			<textField>
 				<reportElement x="0" y="202" width="795" height="60" uuid="cadf4dc6-0f4d-4f63-8da7-688c835072fb">
