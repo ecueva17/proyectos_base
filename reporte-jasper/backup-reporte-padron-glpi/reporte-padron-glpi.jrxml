@@ -39,12 +39,10 @@
 	<field name="ap_am_nom" class="java.lang.String"/>
 	<field name="in_caducidad" class="java.lang.String"/>
 	<background>
-		<band height="555" splitType="Stretch">
-			<property name="com.jaspersoft.studio.unit.height" value="px"/>
-		</band>
+		<band splitType="Stretch"/>
 	</background>
 	<title>
-		<band height="468" splitType="Stretch">
+		<band height="360" splitType="Stretch">
 			<property name="com.jaspersoft.studio.unit.height" value="px"/>
 			<staticText>
 				<reportElement x="0" y="12" width="795" height="20" uuid="2c0c0e8f-23f1-49a2-bbf8-9ee6dfa2acbc">
@@ -73,50 +71,13 @@
 		</band>
 	</title>
 	<pageHeader>
-		<band height="67" splitType="Stretch">
-			<property name="com.jaspersoft.studio.unit.height" value="px"/>
-			<staticText>
-				<reportElement x="100" y="0" width="610" height="14" uuid="56b9724c-0dd1-46c3-a88b-c7eb2e72a65e">
-					<property name="com.jaspersoft.studio.unit.width" value="px"/>
-					<property name="com.jaspersoft.studio.unit.height" value="px"/>
-					<property name="com.jaspersoft.studio.unit.x" value="px"/>
-					<property name="com.jaspersoft.studio.unit.y" value="px"/>
-				</reportElement>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Arial" size="12" isBold="true"/>
-				</textElement>
-				<text><![CDATA[REGISTRO NACIONAL DE IDENTIFICACION Y ESTADO CIVIL-RENIEC]]></text>
-			</staticText>
-		</band>
+		<band height="35" splitType="Stretch"/>
 	</pageHeader>
 	<columnHeader>
-		<band height="10" splitType="Stretch">
-			<property name="com.jaspersoft.studio.unit.height" value="px"/>
-			<staticText>
-				<reportElement x="2" y="0" width="261" height="10" uuid="c56b57f9-9b80-4be5-bbd3-4334bbd5023c">
-					<property name="com.jaspersoft.studio.unit.x" value="px"/>
-					<property name="com.jaspersoft.studio.unit.y" value="px"/>
-					<property name="com.jaspersoft.studio.unit.width" value="px"/>
-					<property name="com.jaspersoft.studio.unit.height" value="px"/>
-				</reportElement>
-				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Arial" size="8"/>
-				</textElement>
-				<text><![CDATA[Datos]]></text>
-			</staticText>
-			<rectangle>
-				<reportElement mode="Transparent" x="2" y="0" width="261" height="10" uuid="1a79f77b-3fcd-4fdf-9277-aca59e0fe490">
-					<property name="com.jaspersoft.studio.unit.x" value="px"/>
-					<property name="com.jaspersoft.studio.unit.y" value="px"/>
-					<property name="com.jaspersoft.studio.unit.width" value="px"/>
-					<property name="com.jaspersoft.studio.unit.height" value="px"/>
-				</reportElement>
-			</rectangle>
-		</band>
+		<band height="61" splitType="Stretch"/>
 	</columnHeader>
 	<detail>
-		<band height="47" splitType="Stretch">
-			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+		<band height="125" splitType="Stretch">
 			<textField>
 				<reportElement x="3" y="1" width="260" height="18" uuid="7094a6a4-7e7e-4722-8991-d816b74ab8c4">
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
@@ -129,36 +90,15 @@
 				</textElement>
 				<textFieldExpression><![CDATA[$F{ap_am_nom}]]></textFieldExpression>
 			</textField>
-			<rectangle>
-				<reportElement mode="Transparent" x="2" y="0" width="261" height="47" uuid="65232c77-6f4d-4746-aac3-5833234814fb">
-					<property name="com.jaspersoft.studio.unit.width" value="px"/>
-					<property name="com.jaspersoft.studio.unit.height" value="px"/>
-					<property name="com.jaspersoft.studio.unit.x" value="px"/>
-					<property name="com.jaspersoft.studio.unit.y" value="px"/>
-				</reportElement>
-			</rectangle>
 		</band>
 	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
 	<pageFooter>
-		<band height="10" splitType="Stretch">
-			<property name="com.jaspersoft.studio.unit.height" value="px"/>
-			<textField>
-				<reportElement x="0" y="0" width="795" height="10" uuid="22137cd1-9420-4028-9504-b774092dc158">
-					<property name="com.jaspersoft.studio.unit.x" value="px"/>
-					<property name="com.jaspersoft.studio.unit.y" value="px"/>
-					<property name="com.jaspersoft.studio.unit.width" value="px"/>
-					<property name="com.jaspersoft.studio.unit.height" value="px"/>
-				</reportElement>
-				<textElement verticalAlignment="Middle">
-					<font fontName="Arial" size="6"/>
-				</textElement>
-				<textFieldExpression><![CDATA[" ANOTACIONES:"+ "<B>A) FALLECIDO SIN ACTA DE DEFUNCIÓN; B) DOMICILIO NO ACTUALIZADO; C) MAYOR DE EDAD CON FOTO DE MENOR; D) CIUDADANO(A) MAYOR A 100 AÑOS; E) CIUDADANO(A) CUMPLE 18 HASTA DÍA DE LA ELECCIÓN.</B"]]></textFieldExpression>
-			</textField>
-		</band>
+		<band height="54" splitType="Stretch"/>
 	</pageFooter>
 	<summary>
-		<band splitType="Stretch">
-			<property name="com.jaspersoft.studio.unit.height" value="px"/>
-		</band>
+		<band height="42" splitType="Stretch"/>
 	</summary>
 </jasperReport>
