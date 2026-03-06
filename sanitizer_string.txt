@@ -1,0 +1,25 @@
+import java.text.Normalizer;
+
+public class SanitizeFolders {
+
+    public static String sanitize(String name) {
+        if (name == null || name.isEmpty()) return "Sin_nombre";
+
+        // 1. Quitar acentos y normalizar
+        String clean = Normalizer.normalize(name, Normalizer.Form.NFD)
+                                 .replaceAll("[^\\p{ASCII}]", "");
+
+        // 2. Formatear: "la libertad" -> "La_libertad"
+        clean = clean.trim().toLowerCase().replace(" ", "_");
+        clean = clean.substring(0, 1).toUpperCase() + clean.substring(1);
+
+        // 3. Truncar (Límite seguro para Linux es 255 bytes)
+        // Como quitamos acentos, 1 carácter = 1 byte.
+        return clean.length() > 255 ? clean.substring(0, 255) : clean;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(sanitize("la libertad")); // La_libertad
+        System.out.println(sanitize("áncash"));      // Ancash
+    }
+}
