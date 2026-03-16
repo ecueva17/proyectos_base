@@ -39,3 +39,21 @@ A+8hlEO!hCJ7jZR=GyiY!8#lJV+WoLku
 
 
 V:H^CCCw%R4Gd3j
+
+/**********************************************************/
+Buenas tardes estimad@s;
+
+Se programó la Sala Virtual, la cual podrá ingresar 5 minutos antes de iniciar la reunión.
+
+ID PERU
+Organizado por Sala RENIEC_6
+
+https://reniec.webex.com/reniec/j.php?MTID=mee6ffc214783e46cc859621f625678f1
+lunes, 16 de marzo de 2026 04:00 PM | 2 horas | (UTC-05:00) Bogotá, Lima, Quito, Río Branco
+Número de reunión: 2866 916 9398
+Contraseña: UuM7wx2wtD3
+
+Clave de organizador: 157455
+
+Saludos Cordiales
+
