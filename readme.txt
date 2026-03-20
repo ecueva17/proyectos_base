@@ -60,3 +60,5 @@ Saludos Cordiales
 
 Get-ChildItem -Path . -Include "tmp" -Recurse -Directory | Remove-Item -Recurse -Force
 
+/**********************************************************/
+https://meet.google.com/hxs-avbm-zbz
