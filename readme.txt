@@ -57,3 +57,6 @@ Clave de organizador: 157455
 
 Saludos Cordiales
 
+
+Get-ChildItem -Path . -Include "tmp" -Recurse -Directory | Remove-Item -Recurse -Force
+
