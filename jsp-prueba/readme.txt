@@ -35,3 +35,5 @@ public class GlobalExceptionHandler {
         return model;
     }
 }
+
+https://cdnjs.com/libraries/jquery.inputmask/5.0.7
