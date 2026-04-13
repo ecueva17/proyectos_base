@@ -62,3 +62,33 @@ Get-ChildItem -Path . -Include "tmp" -Recurse -Directory | Remove-Item -Recurse 
 
 /**********************************************************/
 https://meet.google.com/hxs-avbm-zbz
+
+
+
+/**********************************************************/
+De: Henry Castro Rios <hcastro@reniec.gob.pe> 
+Enviado el: jueves, 9 de abril de 2026 14:30
+Para: Salas Virtuales <salasvirtuales@reniec.gob.pe>
+Asunto: SOLICITUD DE SALA VIRTUAL 
+
+Buenos tardes, 
+
+Se requiere contar con una sala virtual tal como se indica a continuación:
+
+
+ASUNTO:                 REVISION DEL APLICATIVO SATE - 
+Cuando                     LUNES   13ABRIL2026
+Horario                     10:00 – 11:00
+
+ITEM	NOMBRES Y APELLIDOS	Órgano /UUOO	CORREO ELECTRÓNICO
+1	HENRY CASTRO RIOS	DRE	hcastro@reniec.gob.pe;
+2	Yudi Fabiola Rojas Gutierrez	DRE	externo.yrojas@reniec.gob.pe;
+3	Gabriela Arbulu Runciman	DRE	garbulu@reniec.gob.pe;
+4	Jean Cueva Sanchez	OTI	jcueva@reniec.gob.pe;
+
+**Se requiere que el link de reunión sea de ingreso libre, para poder compartir el enlace con otros servidores de otras áreas.
+
+Muchas Gracias
+
+Atentamente
+
