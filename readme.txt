@@ -92,3 +92,17 @@ Muchas Gracias
 
 Atentamente
 
+/**********************************************************/
+Buen día,
+
+Estimad@ se  programó  sala virtual, podrá ingresar 5 minutos antes de inicio de reunión.
+
+REVISION DEL APLICATIVO SATE
+Organizado por Sala RENIEC_3
+
+https://reniec.webex.com/reniec/j.php?MTID=m7e2d258bf8620ab1b0d4a3f264ba6865
+lunes, 13 de abril de 2026 10:00 AM | 1 hora | (UTC-05:00) Bogotá, Lima, Quito, Río Branco
+Número de reunión: 2634 848 1209
+Contraseña: NxkPPgMM278
+Clave de organizador:
+817137
