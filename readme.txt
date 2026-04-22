@@ -106,3 +106,18 @@ Número de reunión: 2634 848 1209
 Contraseña: NxkPPgMM278
 Clave de organizador:
 817137
+
+
+/**********************************************************/
+
+Estimados buenas noches,
+De acuerdo con lo solicitado se procede a realizar la cesión para para publicación de la aplicación https://sisbi.reniec.gob.pe/PLPI/
+ 
+Comparto enlace de la cesión:
+ 
+________________________________________________________________________________
+Reunión de Microsoft Teams 
+Unirse: https://teams.microsoft.com/meet/391642627074986?p=S9VfYJE9OvLY1al5VE 
+Id. de reunión: 391 642 627 074 986 
+Código de acceso: yW2Hg6oy
+________________________________________________________________________________
