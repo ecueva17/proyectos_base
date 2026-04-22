@@ -121,3 +121,65 @@ Unirse: https://teams.microsoft.com/meet/391642627074986?p=S9VfYJE9OvLY1al5VE
 Id. de reunión: 391 642 627 074 986 
 Código de acceso: yW2Hg6oy
 ________________________________________________________________________________
+
+
+/***************************************************************************************/
+ESQUEMA ACTUALIZADO
+{
+  "schema": {
+    "type": "object",
+    "properties": {
+      "_csrf": {
+        "type": "string"
+      },
+      "session_idioma": {
+        "type": "string"
+      },
+      "modoVisualizacion": {
+        "type": "string"
+      },
+      "username": {
+        "type": "string"
+      },
+      "password": {
+        "type": "string"
+      },
+      "feEmi": {
+        "type": "string"
+      },
+      "valueCaptcha": {
+        "type": "string"
+      },
+      "valorCaptcha": {
+        "type": "string"
+      }
+    }
+  }
+}
+
+ESQUEMA PASO JEAN
+{
+  "schema": {
+    "type": "object",
+    "properties": {
+      "_csrf": {
+        "type": "string"
+      },
+      "session_idioma": {
+        "type": "string"
+      },
+      "modoVisualizacion": {
+        "type": "string"
+      },
+      "username": {
+        "type": "string"
+      },
+      "password": {
+        "type": "string"
+      },
+      "valorCaptcha": {
+        "type": "string"
+      }
+    }
+  }
+}
