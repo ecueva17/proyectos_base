@@ -183,3 +183,12 @@ ESQUEMA PASO JEAN
     }
   }
 }
+/***************************************************************************************/
+
+Buenas tardes,
+
+Se comparte el siguiente enlace de meet, para los afinamientos con respecto al aplicativo PLPI:
+
+https://teams.microsoft.com/meet/384793198922197?p=JUreYWiUCD5n0BTFCq
+
+Saludos,
