@@ -1,0 +1,15 @@
+package com.tu.paquete;
+
+import javax.servlet.*;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+
+public class SameSiteFilter implements Filter {
+    public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) 
+            throws IOException, ServletException {
+        // Envolvemos la respuesta para que use nuestro Wrapper
+        chain.doFilter(request, new SameSiteWrapper((HttpServletResponse) response));
+    }
+    public void init(FilterConfig config) {}
+    public void destroy() {}
+}

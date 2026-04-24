@@ -1,0 +1,26 @@
+package com.tu.paquete;
+
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpServletResponseWrapper;
+
+public class SameSiteWrapper extends HttpServletResponseWrapper {
+    public SameSiteWrapper(HttpServletResponse response) {
+        super(response);
+    }
+
+    @Override
+    public void addHeader(String name, String value) {
+        if ("Set-Cookie".equalsIgnoreCase(name) && value != null && !value.contains("SameSite")) {
+            value += "; SameSite=Lax";
+        }
+        super.addHeader(name, value);
+    }
+
+    @Override
+    public void setHeader(String name, String value) {
+        if ("Set-Cookie".equalsIgnoreCase(name) && value != null && !value.contains("SameSite")) {
+            value += "; SameSite=Lax";
+        }
+        super.setHeader(name, value);
+    }
+}
