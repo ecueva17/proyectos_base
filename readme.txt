@@ -192,3 +192,20 @@ Se comparte el siguiente enlace de meet, para los afinamientos con respecto al a
 https://teams.microsoft.com/meet/384793198922197?p=JUreYWiUCD5n0BTFCq
 
 Saludos,
+
+/***************************************************************************************/
+•	Uso obligatorio de HTTPS (TLS 1.2) para cifrar la comunicación.
+•	Implementación de HSTS para evitar conexiones inseguras.
+•	Prevención de ataques como: SQL Injection y XSS
+•	Protección contra ataques DDoS. ( datos y cxaptcha)
+•	Implementación del WAF (Web Application y  Firewall).
+•	Restricciones en base de datos (constraints) y validaciones rechazando automáticamente entradas inválidas (INSERT, UPDATE, DELETE).
+•	Alertas ante comportamientos anómalos o intentos de intrusión y monitoreo continuo con herramientas SIEM (Security Information and Event Management)
+•	Infraestructura redundante (servidores, balanceo de carga).
+•	Actualización y parcheo constante de vulnerabilidades.
+•	Control de acceso basado en roles principio de mínimo privilegio.
+•	Autenticación robusta (Validación de datos e ID PERU).
+•	Gestión segura de sesiones (expiración de la sesión en 2 minutos).
+•	Solo permitía consultar datos dentro del mismo ubigeo
+•	El tramado en las imágenes y datos presentados en el aplicativo
+•	El número del DNI de los ciudadanos se visualizaban al pasar el mouse en la tarjeta de los ciudadanos.
