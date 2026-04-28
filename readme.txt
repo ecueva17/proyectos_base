@@ -209,3 +209,13 @@ Saludos,
 •	Solo permitía consultar datos dentro del mismo ubigeo
 •	El tramado en las imágenes y datos presentados en el aplicativo
 •	El número del DNI de los ciudadanos se visualizaban al pasar el mouse en la tarjeta de los ciudadanos.
+
+
+
+•	como una medida de seguridad del aplicativo, se solicita ingresar código de captcha.
+•	Los números de DNI se mantienen ocultos y solo se muestran al pasar el cursor sobre la tarjeta del ciudadano.
+•	No se muestran detalles de la dirección a su vez se muestra el UBIGEO.
+•	Se oculta el detalle de la dirección y se muestra unicamente DEP/PROV/DIS.
+•	Se oculta la fotografía cuando se trata de ciudadanos menores de edad.
+•	Se muestra unicamente las iniciales de los nombres de los ciudadanos menores de edad.
+•	Se implementaron multiples controles de seguridad para mitigar tecnicas de ciberataques.
