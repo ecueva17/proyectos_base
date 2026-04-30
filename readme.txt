@@ -219,3 +219,11 @@ Saludos,
 •	Se oculta la fotografía cuando se trata de ciudadanos menores de edad.
 •	Se muestra unicamente las iniciales de los nombres de los ciudadanos menores de edad.
 •	Se implementaron multiples controles de seguridad para mitigar tecnicas de ciberataques.
+
+/**********************************************************************************/
+mvn install:install-file -Dfile=idperu-sdk-1.2.jar \
+                         -DgroupId=pe.gob.reniec.idperu.sdk \
+                         -DartifactId=idperu-sdk \
+                         -Dversion=1.2 \
+                         -Dpackaging=jar \
+                         -DlocalRepositoryPath=D:\datos-ecueva\AIP-EXTERNO\repositorio\mvn-repositorio-aip-externo
