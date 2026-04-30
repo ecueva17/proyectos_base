@@ -227,3 +227,17 @@ mvn install:install-file -Dfile=idperu-sdk-1.2.jar \
                          -Dversion=1.2 \
                          -Dpackaging=jar \
                          -DlocalRepositoryPath=D:\datos-ecueva\AIP-EXTERNO\repositorio\mvn-repositorio-aip-externo
+
+
+/**************************************************************************************/
+<script>
+    // 1. Desvinculamos cualquier evento previo (en el elemento y en el document)
+    $('#frmLogin').off('submit');
+    $(document).off('submit', '#frmLogin');
+
+    // 2. Sobrescribimos el evento para forzar el envío nativo del navegador
+    document.getElementById('frmLogin').onsubmit = function(e) {
+        // No llamamos a e.preventDefault(), permitimos que siga su curso natural
+        return true; 
+    };
+</script>
