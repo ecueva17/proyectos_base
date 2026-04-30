@@ -241,3 +241,27 @@ mvn install:install-file -Dfile=idperu-sdk-1.2.jar \
         return true; 
     };
 </script>
+/*************************************************************************************/
+<script type="text/javascript">
+    function liberarFormulario() {
+        var $form = $('#frmLogin');
+        if ($form.length) {
+            // 1. Limpieza profunda de jQuery
+            $form.off('submit');
+            $(document).off('submit', '#frmLogin');
+            $(document).off('submit', 'form'); // Por si el selector es genérico
+
+            // 2. Forzar comportamiento nativo
+            var formOriginal = document.getElementById('frmLogin');
+            formOriginal.onsubmit = function() { return true; };
+            
+            console.log("Formulario liberado de AJAX con éxito.");
+        }
+    }
+
+    // Ejecutar inmediatamente y tras un breve delay para asegurar
+    $(document).ready(function() {
+        liberarFormulario();
+        setTimeout(liberarFormulario, 500); 
+    });
+</script>
