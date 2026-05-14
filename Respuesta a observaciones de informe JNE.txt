@@ -19,3 +19,33 @@ Se reforzará la validación de tokens en el servidor una vez expirado el tiempo
 Se optimizará la configuración de las cabeceras HTTP de respuesta para evitar el almacenamiento de información en la caché del navegador, garantizando que, al utilizar la función “Atrás”, no se rendericen datos residuales de sesiones finalizadas.
 3.10.4: Uso de componentes y librerías de terceros con vulnerabilidades conocidas
 Se evaluará el impacto de actualizar las librerías a versiones estables y seguras, en comparación con la posible migración hacia herramientas y tecnologías más actuales, a fin de mitigar las vulnerabilidades identificadas.
+
+
+mejorado:
+
+traajar sobre estos punto 10
+
+3.10.1: Evasión del control de Rate Limiting (límite de intentos) mediante manipulación de sesión
+Se evaluará y fortalecerá el mecanismo de control de intentos mediante la migración del límite actual (basado en sesión/cookies) hacia una validación persistente en servidor (base de datos o caché), vinculando el control tanto al DNI del consultante como a la dirección IP de origen.
+
+mejorado:
+En la capa perimetral (WAF) se implementó una regla de Rate Limiting basada en la IP de origen como control compensatorio, esta configuración intercepta flujos de peticiones anómalas en la capa de red, mitigando el riesgo de automatización masiva y complementando la arquitectura de seguridad, se integró la plataforma nacional ID-PERU como mecanismo de acceso, delegando la validación a un entorno seguro. Finalmente, se evaluará y fortalecerá el mecanismo de control de intentos: se migrará la lógica actual (dependiente de sesiones/cookies) hacia una validación persistente en servidor (mediante base de datos o caché en memoria), vinculando el control tanto al DNI del consultante y a su dirección IP, anulando así el vector de ataque por manipulación de contexto.
+
+
+3.10.2: Persistencia de sesión ilegítima mediante elusión de controles de tiempo en el lado del cliente (Session Keep-Alive Bypass)
+Se reforzará la validación de tokens en el servidor una vez expirado el tiempo de inactividad (2 minutos), independientemente de la ejecución de scripts de tipo “Keep-Alive” en el cliente.
+
+mejorado:
+Se configuró el timeout de sesión de usuario a 2 minutos por inactividad gestionado en el lado del servidor. Asimismo, se reforzará la validación de tokens en el backend una vez expirado dicho periodo, garantizando la invalidación de la sesión de manera independiente a la ejecución de scripts de tipo Keep-Alive en el cliente.
+
+
+3.10.3: Gestión insegura de sesiones expiradas y persistencia de datos en caché del navegador
+mejorado:
+Se configuró el timeout de sesión de usuario de 2 minutos por inactividad gestionado en el lado del servidor, y se optimizará la configuración de las cabeceras HTTP de respuesta para evitar el almacenamiento de información en la caché del navegador, garantizando que, al utilizar la función “Atrás”, no se rendericen datos residuales de sesiones finalizadas.
+
+
+3.10.4: Uso de componentes y librerías de terceros con vulnerabilidades conocidas
+Se evaluará el impacto de actualizar las librerías a versiones estables y seguras, en comparación con la posible migración hacia herramientas y tecnologías más actuales, a fin de mitigar las vulnerabilidades identificadas.
+
+mejorado:
+Se subsanarón las vulnerabilidades internas reportadas por Fortify Webinspect, en adelante, se evaluará el impacto de actualizar las librerías a versiones seguras frente a la alternativa de migrar hacia herramientas más actuales, a fin de mitigar lo reportado.
