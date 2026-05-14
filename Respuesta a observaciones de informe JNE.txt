@@ -1,0 +1,21 @@
+Hola Elvis
+
+Verifica punto por punto
+
+3.9.1: Verificación del comportamiento del sistema en entorno de red privada institucional
+Se optimizará mediante la incorporación de mensajes informativos en la interfaz de usuario, previos al inicio del proceso de validación, en los que se detalle claramente el límite de consultas diarias.
+3.9.2: Ausencia de información sobre el límite de consultas en la plataforma
+Se mejorará mediante la implementación de mensajes informativos en la interfaz de usuario, previos al proceso de validación, especificando de forma explícita el límite de consultas diarias permitido.
+3.9.3: Disponibilidad de requisitos de navegación
+Se mejorará mediante la inclusión de mensajes informativos en la interfaz de usuario, en los que se detallen los navegadores compatibles y sus versiones recomendadas para un acceso óptimo al sistema.
+3.9.4: Visualización de imagen de menor de edad asociada a ciudadano mayor en consulta pública
+Se evaluará y reforzará la restricción relacionada con la visualización de imágenes de menores de edad cuando el ciudadano consultado sea mayor de edad, asegurando su alineación con la finalidad del sistema de publicación de datos.
+
+3.10.1: Evasión del control de Rate Limiting (límite de intentos) mediante manipulación de sesión
+Se evaluará y fortalecerá el mecanismo de control de intentos mediante la migración del límite actual (basado en sesión/cookies) hacia una validación persistente en servidor (base de datos o caché), vinculando el control tanto al DNI del consultante como a la dirección IP de origen.
+3.10.2: Persistencia de sesión ilegítima mediante elusión de controles de tiempo en el lado del cliente (Session Keep-Alive Bypass)
+Se reforzará la validación de tokens en el servidor una vez expirado el tiempo de inactividad (2 minutos), independientemente de la ejecución de scripts de tipo “Keep-Alive” en el cliente.
+3.10.3: Gestión insegura de sesiones expiradas y persistencia de datos en caché del navegador
+Se optimizará la configuración de las cabeceras HTTP de respuesta para evitar el almacenamiento de información en la caché del navegador, garantizando que, al utilizar la función “Atrás”, no se rendericen datos residuales de sesiones finalizadas.
+3.10.4: Uso de componentes y librerías de terceros con vulnerabilidades conocidas
+Se evaluará el impacto de actualizar las librerías a versiones estables y seguras, en comparación con la posible migración hacia herramientas y tecnologías más actuales, a fin de mitigar las vulnerabilidades identificadas.
