@@ -265,3 +265,10 @@ mvn install:install-file -Dfile=idperu-sdk-1.2.jar \
         setTimeout(liberarFormulario, 500); 
     });
 </script>
+
+
+/************************************************************/
+https://reniec.webex.com/reniec/j.php?MTID=mea360e102e5d2ef35ef728730fb520a2 
+viernes, 3 de julio de 2026 10:45 AM | 1 hora | (UTC-05:00) Bogotá, Lima, Quito, Río Branco
+Número de reunión: 2861 275 3294
+Contraseña: veDdhdir226
