@@ -272,3 +272,18 @@ https://reniec.webex.com/reniec/j.php?MTID=mea360e102e5d2ef35ef728730fb520a2
 viernes, 3 de julio de 2026 10:45 AM | 1 hora | (UTC-05:00) Bogotá, Lima, Quito, Río Branco
 Número de reunión: 2861 275 3294
 Contraseña: veDdhdir226
+
+/*****************************************************************/
+Estimada Rosario y estimado Jean:
+
+Comparto con ustedes el enlace para la reunión de mañana a las 2:00 pm. 
+
+Consulta sobre plataforma de empadronamiento
+Organizado por Sala RENIEC_1
+
+https://reniec.webex.com/reniec/j.php?MTID=mb595a1ad2fd3cbc48624cbf7a3c78d20 
+martes, 14 de julio de 2026 02:00 PM | 2 horas | (UTC-05:00) Bogotá, Lima, Quito, Río Branco
+Número de reunión: 2630 302 6562
+Contraseña: kbHJvd895T9
+
+Saludos,
