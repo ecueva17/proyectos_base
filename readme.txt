@@ -287,3 +287,21 @@ Número de reunión: 2630 302 6562
 Contraseña: kbHJvd895T9
 
 Saludos,
+
+/*****************************************************************/
+Estimado Elvis y Rosario:
+
+Recién veo tu correo, disculpa. ¿Crees que podamos reunirnos hoy a las 4 pm? Rosario, te pido también tu confirmación y la disculpa del caso. 
+
+Les comparto el link
+Reunión Demarcación territorial: plataforma web - empadronamiento
+Miércoles, 15 julio 4:00 – 5:00pm
+Zona horaria: America/Lima
+Información para unirse a la reunión de Google Meet
+Vínculo a la videollamada: https://meet.google.com/uwc-jtmk-nxu
+O marca el: ‪(PE) +51 1 6449188 PIN: ‪140 478 621 6733#
+Más números de teléfono: https://tel.meet/uwc-jtmk-nxu?pin=1404786216733 
+
+Gracias de antemano,
+
+Saludos
