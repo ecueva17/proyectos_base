@@ -305,3 +305,7 @@ Más números de teléfono: https://tel.meet/uwc-jtmk-nxu?pin=1404786216733
 Gracias de antemano,
 
 Saludos
+
+/*****************************************************************/
+https://meet.google.com/wjj-papo-ocm
+lunes, 20 de julio de 2026 10:00-12:00
