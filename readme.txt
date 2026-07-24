@@ -309,3 +309,8 @@ Saludos
 /*****************************************************************/
 https://meet.google.com/wjj-papo-ocm
 lunes, 20 de julio de 2026 10:00-12:00
+
+/*****************************************************************/
+Invitación: REUNIÓN VIRTUAL_SOLICITUD DE PLATAFORMA WEB - DEMARCACIÓN... vie 24 jul 2026 10am - 11:30am (PET) (externo.ecueva@reniec.gob.pe)
+https://meet.google.com/nee-rbks-umt
+viernes, 24 de julio de 2026 10:00-11:30
