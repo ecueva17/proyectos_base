@@ -320,3 +320,34 @@ viernes, 24 de julio de 2026 10:00-11:30
 nvitación: Reunión virtual: Copias de padrones electorales a organiz... jue 30 jul 2026 11am - 12:30pm (PET) (externo.ecueva@reniec.gob.pe)
 https://meet.google.com/kxp-xdur-tbx
 jueves, 30 de julio de 2026 11:00-12:30
+
+/*****************************************************************/
+asumiendo una velocidad constante de 125,000 registros por minuto
+velocidad de descarga Velocidad=500,000 registros / 4 minutos =125,000 registros/minuto
+
+MADRE DE DIOS	150,073		1.2 min
+MOQUEGUA		166,170		1.3 min
+TUMBES			182,753		1.5 min
+PASCO			223,677		1.8 min
+TACNA			304,650		2.4 min
+HUANCAVELICA	343,744		2.7 min
+AMAZONAS		348,859		2.8 min
+APURIMAC		365,047		2.9 min
+UCAYALI			459,830		3.7 min
+AYACUCHO		526,153		4.2 min
+HUANUCO			662,543		5.3 min
+ICA				720,878		5.8 min
+SAN MARTIN		731,762		5.9 min
+LORETO			783,271		6.3 min
+CALLAO			865,515		6.9 min
+PUNO			968,096		7.7 min
+ANCASH			969,557		7.8 min
+LAMBAYEQUE		1,059,827	8.5 min
+JUNIN			1,070,524	8.6 min
+CUSCO			1,139,391	9.1 min
+CAJAMARCA		1,209,993	9.7 min
+AREQUIPA		1,234,584	9.9 min
+PIURA			1,548,156	12.4 min
+LA LIBERTAD		1,565,925	12.5 min
+LIMA			8,713,678	1 h y 10 min
+Total general	26,314,656	3 h y 31 min
