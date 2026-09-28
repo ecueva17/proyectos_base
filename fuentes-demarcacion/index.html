@@ -54,24 +54,22 @@
                     <!-- Contenedor del Captcha e Imagen -->
                     <div class="mb-3">
                         <!-- Grupo de entrada que une la imagen con el boton perfectamente -->
-                        <div class="input-group align-items-stretch" style="max-width: 100%;">
+                        <div class="input-group align-items-stretch captcha-group">
 
                             <!-- Contenedor para la imagen del captcha -->
-                            <div class="form-control d-flex align-items-center justify-content-center bg-light p-0" style="min-height: 45px;">
+                            <div class="form-control d-flex align-items-center justify-content-center bg-light p-0 captcha-imgwrap">
                                 <!-- Corrección Thymeleaf: th:src apunta dinámicamente a tu endpoint de captcha -->
                                 <img id="captchaImg"
                                      th:src="@{/captcha}"
                                      alt="Captcha"
-                                     class="img-fluid"
-                                     style="max-height: 42px;">
+                                     class="img-fluid captcha-img">
                             </div>
 
                             <!-- Boton de refresco nativo de Bootstrap (Pegado y perfectamente alineado) -->
                             <button type="button"
-                                    class="btn btn-outline-secondary d-flex align-items-center justify-content-center"
+                                    class="btn btn-outline-secondary d-flex align-items-center justify-content-center btn-refrescar"
                                     id="btnRefrescar"
-                                    title="Actualizar captcha"
-                                    style="width: 45px;">
+                                    title="Actualizar captcha">
                                 <!-- Icono vectorial limpio de actualizacion -->
                                 <svg xmlns="http://w3.org" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                                     <path fill-rule="evenodd" d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2z"/>
@@ -111,7 +109,7 @@
             <div class="vacio" th:if="${resultado == null and exito == false}">
                 <div class="icono" aria-hidden="true">!</div>
                 <p><strong>No se encontró una solicitud de empadronamiento asociada a los datos ingresados. Verifica el número de DNI y la fecha de emisión.</strong></p>
-                <p style="margin-top:10px">Si tu empadronamiento fue reciente, es posible que aún no figure registrado; la información se actualiza dos veces por semana.</p>
+                <p class="mt-10">Si tu empadronamiento fue reciente, es posible que aún no figure registrado; la información se actualiza dos veces por semana.</p>
                 <div class="actualizado">Información actualizada al <span th:if="${fechaActualizacion != null}" th:text="${#dates.format(fechaActualizacion, 'dd ''de'' MMMM ''de'' yyyy')}"></span><span th:if="${fechaActualizacion == null}">-</span>.</div>
             </div>
 
@@ -143,7 +141,7 @@
                         <span th:if="${resultado.inSolicitud == 'E'}">etapa 3 de 4 · 75% completado</span>
                         <span th:if="${resultado.inSolicitud == 'A' or resultado.inSolicitud == 'N'}">etapa 4 de 4 · 100% completado</span>
                     </p>
-                    <div class="barra-wrap"><div class="riel"><div class="relleno" th:classappend="${resultado.inSolicitud == 'A' ? 'ok' : (resultado.inSolicitud == 'N' ? 'pend' : '')}" th:style="${'width:' + (resultado.inSolicitud == 'R' ? '12%' : (resultado.inSolicitud == 'D' ? '37.5%' : (resultado.inSolicitud == 'E' ? '62.5%' : '100%')))}"></div></div>
+                    <div class="barra-wrap"><div class="riel"><div class="relleno" th:classappend="${(resultado.inSolicitud == 'A' ? 'ok' : (resultado.inSolicitud == 'N' ? 'pend' : '')) + ' ' + (resultado.inSolicitud == 'R' ? 'et-25' : (resultado.inSolicitud == 'D' ? 'et-50' : (resultado.inSolicitud == 'E' ? 'et-75' : 'et-100')))}"></div></div>
                         <div class="hitos">
                             <div class="hito hecho"><span class="punto">✓</span><span class="rot">Solicitud recibida</span></div>
                             <div class="hito" th:classappend="${resultado.inSolicitud == 'D' or resultado.inSolicitud == 'E' or resultado.inSolicitud == 'A' or resultado.inSolicitud == 'N' ? 'hecho' : ''}"><span class="punto" th:text="${resultado.inSolicitud == 'D' or resultado.inSolicitud == 'E' or resultado.inSolicitud == 'A' or resultado.inSolicitud == 'N' ? '✓' : ''}"></span><span class="rot">Documentación en RENIEC</span></div>
@@ -171,7 +169,7 @@
     </section>
 
     <!-- Contenedor flotante fijado arriba a la derecha -->
-    <div id="contenedor-alerta-flotante" class="position-fixed top-0 end-0 p-3" style="z-index: 1100;">
+    <div id="contenedor-alerta-flotante" class="position-fixed top-0 end-0 p-3 alerta-flotante">
 
         <!-- Este es el fragmento que el controlador va a renderizar e inyectar -->
         <div th:fragment="fragmentoAlerta" th:if="${exito == false and mensaje != null}"
