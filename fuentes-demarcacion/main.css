@@ -160,3 +160,19 @@ footer.inst{border-top:1px solid var(--linea);background:var(--blanco);margin-to
 .demo-btns button:hover{border-color:var(--azul);color:var(--azul)}
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
 @media (prefers-reduced-motion:reduce){.relleno{transition:none}}
+
+/* ==== Bloque captcha (Bootstrap) — evita estilos inline por CSP ==== */
+.captcha-group{max-width:100%}
+.captcha-imgwrap{min-height:45px}
+.captcha-img{max-height:42px}
+.btn-refrescar{width:45px}
+.mt-10{margin-top:10px}
+
+/* ==== Alerta flotante ==== */
+.alerta-flotante{z-index:1100}
+
+/* ==== Barra de avance por etapa (reemplaza th:style dinámico) ==== */
+.relleno.et-25{width:12%}
+.relleno.et-50{width:37.5%}
+.relleno.et-75{width:62.5%}
+.relleno.et-100{width:100%}
