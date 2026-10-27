@@ -351,3 +351,27 @@ PIURA			1,548,156	12.4 min
 LA LIBERTAD		1,565,925	12.5 min
 LIMA			8,713,678	1 h y 10 min
 Total general	26,314,656	3 h y 31 min
+
+/***********************************************************/
+De: Salas Virtuales <salasvirtuales@reniec.gob.pe> 
+Enviado el: lunes, 26 de octubre de 2026 16:36
+Para: Stephany Mosca Humphery <smosca@reniec.gob.pe>
+CC: Angelica Figueroa Saenz <mfigueroa@reniec.gob.pe>; Diana Huaman Monzon <dhuaman@reniec.gob.pe>; (Externo) Elvis Ivan Cueva Odar <externo.ecueva@reniec.gob.pe>; (Externo) Paul Valencia Perez <pvalencia@reniec.gob.pe>
+Asunto: RE: Sala Virtual Webex - UIS – RSI - Gestión de Fedatarios - 27/10/2026
+
+Buenas tardes estimad@s;
+
+Se programó la Sala Virtual, la cual podrá ingresar 5 minutos antes de iniciar la reunión.
+
+RSI - Gestión de Fedatarios
+Organizado por Sala RENIEC_6
+
+https://reniec.webex.com/reniec/j.php?MTID=m3a1a0d073aabf755d427d9b79a1518ee 
+martes, 27 de octubre de 2026 03:00 PM | 1 hora | (UTC-05:00) Bogotá, Lima, Quito, Río Branco
+Número de reunión: 2861 135 3656
+Contraseña: ndWZE8xNj53
+
+Clave de organizador: 159702
+
+Saludos Cordiales
+
